@@ -1,0 +1,41 @@
+{
+  "name": "tie-app-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint -- --fix",
+    "format": "turbo run format",
+    "format:check": "turbo run format --check",
+    "test": "turbo run test",
+    "clean": "pnpm store prune && rm -rf node_modules && rm -rf **/node_modules && rm -rf pnpm-lock.yaml && pnpm install",
+    "clean:cache": "pnpm store prune && rm -rf node_modules && rm -rf **/node_modules && rm -rf pnpm-lock.yaml"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.35.2",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "prettier": "^3.3.3",
+    "rimraf": "^5.0.10",
+    "turbo": "^1.13.4",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "clsx": "^2.1.1",
+    "jsonwebtoken": "^9.0.2",
+    "zod": "^3.23.8"
+  }
+}
